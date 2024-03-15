@@ -1,0 +1,22 @@
+{
+  "afdsfadsf": {
+    "title": "First title",
+    "content": "Some markdown maybe?",
+    "children": {
+      "babababab": {
+        "title": "Some subnote title",
+        "content": "Lorem ipsum"
+      }
+    }
+  },
+  "blahblah": {
+    "title": "Second title",
+    "content": "Some other markdown maybe",
+    "children": {}
+  },
+  "fadfasdl": {
+    "title": "Third title",
+    "content": "Some other markdown maybe",
+    "children": {}
+  }
+}

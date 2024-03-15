@@ -1,0 +1,19 @@
+.nav {
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  flex-shrink: 0;
+  resize: horizontal;
+  overflow: auto;
+  position: relative;
+  font-size: 14px;
+  color: var(--text-grey);
+  background-color: rgb(32, 32, 32);
+}
+
+.mainActions {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 8px;
+}
