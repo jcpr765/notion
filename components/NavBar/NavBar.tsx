@@ -1,18 +1,8 @@
-import Icon from "@mdi/react";
-import { mdiNoteTextOutline } from "@mdi/js";
 import { promises as fs } from "fs";
 import NavBarMainAction, { NavBarMainActionType } from "./NavBarMainAction";
 import styles from "./ Navbar.module.css";
-
-interface Notes {
-  [id: string]: Note;
-}
-
-interface Note {
-  title: string;
-  content: string;
-  children: Notes;
-}
+import { Notes } from "@/types/notes";
+import NoteListItem from "./NoteListItem";
 
 export default async function NavBar() {
   const file = await fs.readFile(process.cwd() + "/dummyData.json", "utf8");
@@ -30,14 +20,7 @@ export default async function NavBar() {
       </div>
       <ul>
         {Object.keys(notes).map((noteId: string) => (
-          <li key={noteId}>
-            <Icon
-              size={1}
-              path={mdiNoteTextOutline}
-              title={notes[noteId].title}
-            />
-            <span>{notes[noteId].title}</span>
-          </li>
+          <NoteListItem key={noteId} note={notes[noteId]} />
         ))}
       </ul>
     </nav>
