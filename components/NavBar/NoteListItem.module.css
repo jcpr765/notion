@@ -1,0 +1,24 @@
+.noteItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 27px;
+  margin: 1px 0;
+  padding: 2px 10px 2px 5px;
+}
+
+.noteItem > div {
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+.noteItem svg {
+  width: 20px;
+}
+
+.noteItem span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
