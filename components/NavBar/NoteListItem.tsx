@@ -13,8 +13,8 @@ export default function NoteListItem({ note }: NoteListItemProps) {
   const [open, setIsOpen] = useState(false);
 
   return (
-    <li className={styles.noteItem} onClick={() => setIsOpen(!open)}>
-      <div>
+    <li className={styles.noteItem}>
+      <div className={styles.carat} onClick={() => setIsOpen(!open)}>
         <Icon
           size="24px"
           path={mdiAppleKeyboardControl}
@@ -22,10 +22,11 @@ export default function NoteListItem({ note }: NoteListItemProps) {
         />
       </div>
       <div>
-        <Icon id={note.title} path={mdiNoteTextOutline} title={note.title} />
+        <div className={styles.icon}>
+          <Icon id={note.id} path={mdiNoteTextOutline} title={note.title} />
+        </div>
+        <span>{note.title}</span>
       </div>
-
-      <span>{note.title}</span>
     </li>
   );
 }

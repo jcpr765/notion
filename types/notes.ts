@@ -1,9 +1,7 @@
-export interface Notes {
-  [id: string]: Note;
-}
-
 export interface Note {
+  id: string;
   title: string;
   content: string;
-  children: Notes;
 }
+
+export type Notes = Note[];

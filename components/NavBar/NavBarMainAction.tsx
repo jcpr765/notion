@@ -31,7 +31,7 @@ export default function NavBarMainAction({ type }: NavBarMainActionProps) {
   return (
     <div className={styles.action}>
       <div>
-        <Icon path={path} title={title} />
+        <Icon id={title} path={path} title={title} />
       </div>
       <span>{title}</span>
     </div>

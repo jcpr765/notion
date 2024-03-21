@@ -1,13 +1,18 @@
-import { promises as fs } from "fs";
 import NavBarMainAction, { NavBarMainActionType } from "./NavBarMainAction";
 import styles from "./ Navbar.module.css";
 import { Notes } from "@/types/notes";
 import NoteListItem from "./NoteListItem";
+import useNotes from "@/hooks/useNotes";
 
-export default async function NavBar() {
-  const file = await fs.readFile(process.cwd() + "/dummyData.json", "utf8");
+const renderNavBarItems = (notes: Notes | null) => {
+  if (notes !== null) {
+    return notes.map((note) => <NoteListItem key={note.id} note={note} />);
+  }
+  return null;
+};
 
-  const notes: Notes = JSON.parse(file);
+export default function NavBar() {
+  const notes: Notes | null = useNotes();
 
   return (
     <nav className={styles.nav}>
@@ -18,11 +23,7 @@ export default async function NavBar() {
         <NavBarMainAction type={NavBarMainActionType.Inbox} />
         <NavBarMainAction type={NavBarMainActionType.NewPage} />
       </div>
-      <ul>
-        {Object.keys(notes).map((noteId: string) => (
-          <NoteListItem key={noteId} note={notes[noteId]} />
-        ))}
-      </ul>
+      <ul>{renderNavBarItems(notes)}</ul>
     </nav>
   );
 }
