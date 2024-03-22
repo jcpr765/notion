@@ -23,7 +23,7 @@ export default function NavBar() {
         <NavBarMainAction type={NavBarMainActionType.Inbox} />
         <NavBarMainAction type={NavBarMainActionType.NewPage} />
       </div>
-      <ul>{renderNavBarItems(notes)}</ul>
+      <div>{renderNavBarItems(notes)}</div>
     </nav>
   );
 }
