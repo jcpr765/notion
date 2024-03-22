@@ -2,6 +2,7 @@
   --text-grey: rgb(155, 155, 155);
   --text-white: rgba(255, 255, 255, 0.81);
   --nav-background-color: rgb(32, 32, 32);
+  --hover-color: rgb(255, 255, 255, 0.055);
 }
 
 * {
