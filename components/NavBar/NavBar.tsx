@@ -16,6 +16,7 @@ export default function NavBar() {
 
   return (
     <nav className={styles.nav}>
+      <NavBarResizer />
       <div className={styles.mainActions}>
         {/* TODO the whole login popup */}
         <div>Name</div>
@@ -26,4 +27,8 @@ export default function NavBar() {
       <div>{renderNavBarItems(notes)}</div>
     </nav>
   );
+}
+
+function NavBarResizer() {
+  return <div className={styles.resizer}></div>;
 }

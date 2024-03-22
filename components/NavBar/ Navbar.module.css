@@ -7,7 +7,7 @@
   position: relative;
   font-size: 12px;
   color: var(--text-grey);
-  background-color: rgb(32, 32, 32);
+  background-color: var(--nav-background-color);
   overflow: hidden;
 }
 
@@ -15,4 +15,21 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 8px;
+}
+
+.resizer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  /*Invisible 12px box slightly overlapping to the left gives it space for people to hover on it*/
+  width: 12px;
+  margin-left: -6px;
+  box-shadow: rgba(255, 255, 255, 0.05) -1px 0px 0px 0px inset;
+  transition: box-shadow 300ms ease 0s;
+  cursor: col-resize;
+}
+
+.resizer:hover {
+  box-shadow: rgba(255, 255, 255, 0.1) -1px 0px 0px 0px inset;
 }
